@@ -1,2 +1,2 @@
 # Twitter_Bot
-A twitter bot projects written in python to mash together two headline
+A twitter bot project written in python to mash together two headline
