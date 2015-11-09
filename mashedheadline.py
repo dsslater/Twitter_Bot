@@ -1,6 +1,6 @@
 import tweepy
 import top_stories
-import nltk_test
+import nl_substitutions
 import random
 
 class TwitterAPI:
@@ -23,5 +23,5 @@ if __name__ == "__main__":
     twitter = TwitterAPI()
     sports_story = top_stories.get_story(queries1[random.randint(0, len(queries1))])
     politics_story = top_stories.get_story(queries2[random.randint(0, len(queries2))])
-    tweet = nltk_test.new_headline(sports_story[0], politics_story[0])
+    tweet = nl_substitutions.new_headline(sports_story[0], politics_story[0])
     twitter.tweet(tweet)
