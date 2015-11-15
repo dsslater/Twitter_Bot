@@ -16,12 +16,15 @@ class TwitterAPI:
     def tweet(self, message):
         self.api.update_status(status=message)
 
-queries1 = ['', 'news', 'politics', 'congress', '2016']
-queries2 = ['movie', 'science', 'sports', 'space', 'award', 'movement']
+queries1 = ['', 'news', 'politics', 'congress', 'election', 'trump', 'iowa', 'bush', 'clinton', 'rubio', 'media', 'poll']
+queries2 = ['movie', 'music', 'science', 'sports', 'space', 'award', 'movement', 'entertainment', 'hollywood', 'markets', 'animals', 'economy']
 
 if __name__ == "__main__":
     twitter = TwitterAPI()
-    sports_story = top_stories.get_story(queries1[random.randint(0, len(queries1))])
-    politics_story = top_stories.get_story(queries2[random.randint(0, len(queries2))])
-    tweet = nl_substitutions.new_headline(sports_story[0], politics_story[0])
+    tweet = False
+    while tweet == False:
+        politics_story = top_stories.get_story(queries1[random.randint(0, len(queries1)-1)])
+        soft_story = top_stories.get_story(queries2[random.randint(0, len(queries2)-1)])
+        if politics_story != None and soft_story != None:
+            tweet = nltk_test.new_headline(soft_story[0], politics_story[0])
     twitter.tweet(tweet)
