@@ -33,8 +33,6 @@ if __name__ == "__main__":
     while tweet == False:
         politics_story = top_stories.get_story(queries1[random.randint(0, len(queries1)-1)])
         soft_story = top_stories.get_story(queries2[random.randint(0, len(queries2)-1)])
-        print(politics_story, soft_story)
         if politics_story != None and soft_story != None:
-            print(tweet)
             tweet = nltk_test.new_headline(soft_story, politics_story)
     twitter.tweet(tweet)
