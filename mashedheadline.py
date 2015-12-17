@@ -28,7 +28,6 @@ is tried.
 """
 if __name__ == "__main__":
 
-    print("WTF")
     twitter = TwitterAPI()
     tweet = False
     while tweet == False:
