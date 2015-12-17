@@ -88,7 +88,6 @@ def new_headline(head1, head2):
         success = True
     if len(adj_reps) :
         head = substitute(head, adj_reps)
-        success = True
     if success:
         return head
     return False
