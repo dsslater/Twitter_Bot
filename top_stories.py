@@ -15,7 +15,7 @@ def is_cap_headline(headline):
     for word in words:
         if word[0] != word.upper()[0]:
             not_up += 1
-    if not_up / len(words) < 0.2:
+    if not_up / len(words) < 0.3:
         return True
     return False
 
